@@ -4,7 +4,3 @@ numpy
 tensorflow
 scikit-learn
 joblib
-sklearn.preprocessing
-tensorflow.keras.models
-tensorflow.keras.losses
-tensorflow.keras.metrics
