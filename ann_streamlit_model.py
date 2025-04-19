@@ -34,7 +34,7 @@ scaler = joblib.load('scaler.pkl')
 
 # Load the dataset used for fitting the scaler (or use a representative dataset)
 # This step ensures that the scaler is fitted with the correct data
-df = pd.read_excel(r"C:\Users\hp\Downloads\combined data points - CCCC.xlsx")
+df = pd.read_excel("combined data points - CCCC.xlsx")
 
 # Fit the scaler with the dataset (ensure it is fitted with the same data used during training)
 scaler.fit(df[['Length', 'Breath', 'Diameter', 'Thickness']])
