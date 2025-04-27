@@ -20,10 +20,10 @@ st.title('Artificial Neural Network (ANN) Model for Frequency Prediction')
 
 # Load the saved model (check your file path here)
 try:
-    model_p1 = tf.keras.models.load_model("ann_model1.keras")
-    model_p2 = tf.keras.models.load_model("ann_model2.keras")
-    model_p3 = tf.keras.models.load_model("ann_model3.keras")
-    model_p4 = tf.keras.models.load_model("ann_model4.keras")
+    model_p1 = tf.keras.models.load_model("ann_model_1.keras")
+    model_p2 = tf.keras.models.load_model("ann_model_2.keras")
+    model_p3 = tf.keras.models.load_model("ann_model_3.keras")
+    model_p4 = tf.keras.models.load_model("ann_model_4.keras")
 except ValueError as e:
     st.error(f"Error loading model: {e}")
     st.stop()
