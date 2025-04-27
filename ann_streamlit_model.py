@@ -58,8 +58,3 @@ if st.sidebar.button("Predict"):
     st.write(f"**Predicted Frequency F2**: {p2_prediction:.4f}")
     st.write(f"**Predicted Frequency F3**: {p3_prediction:.4f}")
     st.write(f"**Predicted Frequency F4**: {p4_prediction:.4f}")
-
-import joblib
-
-# Save the scaler
-joblib.dump(scaler, 'scaler.pkl')
