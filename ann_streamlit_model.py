@@ -62,7 +62,7 @@ cutout_area = math.pi * (diameter / 2) ** 2
 if st.sidebar.button("Predict"):
 # Check if cutout is larger than plate
     if (cutout_area > plate_area) or (diameter > length) or (diameter > breath):
-         st.error("❌ Cutout area is greater than the plate area. Please adjust the parameters.")
+         st.error("❌ Invalid Parameters")
     else:
         input_data = np.array([length, breath, diameter, thickness])
 
