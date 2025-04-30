@@ -17,7 +17,7 @@ def load_model_safe(filepath):
 
 # Load scaler safely
 def load_scaler_safe(shape, boundary):
-    scaler_path = f"scalers/scaler_{shape.lower()}_{boundary}.pkl"
+    scaler_path = f"scaler_{shape.lower()}_{boundary}.pkl"
     return joblib.load(scaler_path) if os.path.exists(scaler_path) else None
 
 # Predict function
@@ -75,7 +75,7 @@ if valid and st.sidebar.button("Predict"):
 
     model_dir = "models"
     model_paths = [
-        f"{model_dir}/{shape_key.lower()}_{bc_key}_f{i}.keras" for i in range(1, 5)
+        f"{shape_key.lower()}_{bc_key}_f{i}.keras" for i in range(1, 5)
     ]
     shape_models = [load_model_safe(path) for path in model_paths]
     scaler = load_scaler_safe(shape_key, bc_key)
