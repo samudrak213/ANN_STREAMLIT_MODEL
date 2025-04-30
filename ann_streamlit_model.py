@@ -7,13 +7,6 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import load_model
 
-import streamlit as st
-import numpy as np
-import os
-import joblib
-import tensorflow as tf
-from tensorflow.keras.models import load_model
-
 # === Title ===
 st.title("ANN Model for Frequency Prediction of Plates with Cutouts")
 
