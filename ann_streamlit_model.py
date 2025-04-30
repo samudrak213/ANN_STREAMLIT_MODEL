@@ -72,7 +72,7 @@ elif cutout_shape == "Capsule":
 
 # Prediction function
 def make_prediction(model, input_data):
-    scaled = scaler.fit_transform([input_data])
+    scaled = scaler.transform([input_data])
     return model.predict(scaled)[0][0]
 
 # Predict button
