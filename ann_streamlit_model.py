@@ -53,32 +53,23 @@ error_messages = []
 if cutout_shape == "Circle":
     diameter = st.sidebar.number_input("Diameter (mm)", min_value=0.0, value=10.0, step=1.0)
     input_data = np.array([length, breadth, diameter, thickness])
-    if diameter + 2 * clearance > length:
-        error_messages.append("Diameter + edge clearance exceeds plate length.")
-        valid = False
-    if diameter + 2 * clearance > breadth:
-        error_messages.append("Diameter + edge clearance exceeds plate breadth.")
+    if (diameter + 2 * clearance > length) or (diameter + 2 * clearance > breadth) :
+        error_messages.append("Circle cutout (with 3mm edge clearance) does not fit within the plate.")
         valid = False
 
 elif cutout_shape == "Square":
     side = st.sidebar.number_input("Side (mm)", min_value=0.0, value=10.0, step=1.0)
     input_data = np.array([length, breadth, side, thickness])
-    if side + 2 * clearance > length:
-        error_messages.append("Side + edge clearance exceeds plate length.")
-        valid = False
-    if side + 2 * clearance > breadth:
-        error_messages.append("Side + edge clearance exceeds plate breadth.")
+    if (side + 2 * clearance > length) or (side + 2 * clearance > breadth) :
+        error_messages.append("Square cutout (with 3mm edge clearance) does not fit within the plate.")
         valid = False
 
 elif cutout_shape == "Capsule":
     diameter = st.sidebar.number_input("Diameter (mm)", min_value=0.0, value=10.0, step=1.0)
     side = st.sidebar.number_input("Side (mm)", min_value=0.0, value=10.0, step=1.0)
     input_data = np.array([length, breadth, diameter, side, thickness])
-    if diameter + 2 * clearance > length:
-        error_messages.append("Capsule diameter + edge clearance exceeds plate length.")
-        valid = False
-    if side + 2 * clearance > breadth:
-        error_messages.append("Capsule side + edge clearance exceeds plate breadth.")
+    if (diameter + 2 * clearance > length) or (side + 2 * clearance > breadth):
+        error_messages.append("Capsule cutout (with 3mm edge clearance) does not fit within the plate.")
         valid = False
 
 # Show any dimension validation errors
