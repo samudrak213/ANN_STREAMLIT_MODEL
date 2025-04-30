@@ -39,8 +39,8 @@ models = {
     },
 }
 
-# Use a dummy scaler for now (replace with your fitted scaler)
-scaler = StandardScaler()
+
+scaler = joblib.load('scaler.pkl')
 
 # Sidebar selections
 st.sidebar.header("Select Parameters")
