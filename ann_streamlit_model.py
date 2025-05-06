@@ -35,7 +35,7 @@ def make_prediction(model, scaler, input_data):
 # === Sidebar Inputs ===
 
 st.sidebar.header("Select Parameters")
-cutout_shape = st.sidebar.selectbox("Cutout Shape", ["Circle", "Square", Capsule])
+cutout_shape = st.sidebar.selectbox("Cutout Shape", ["Circle", "Square", "Capsule"])
 boundary_condition = st.sidebar.selectbox("Boundary Condition", ["CCCC", "CCCF", "CCFF", "CFFF", "SSSS", "CFCF"])
 
 # Plate dimensions
