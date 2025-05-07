@@ -90,7 +90,7 @@ if predict_clicked:
 
         model_dir = "models"
         model_paths = [
-            f"{shape_key}_{bc_key}_f{i}.keras" for i in range(1, 5)
+            f"{shape_key}_{bc_key}_f{i}.keras" for i in range(1, 7)
         ]
         shape_models = [load_model_safe(path) for path in model_paths]
         scaler = load_scaler_safe(cutout_shape, boundary_condition)
