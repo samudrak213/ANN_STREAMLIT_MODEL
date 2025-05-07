@@ -75,14 +75,6 @@ elif cutout_shape == "Capsule":
 # Show any dimension validation errors
 for msg in error_messages:
     st.error(f"❌ {msg}")
-#read the model files
-def get_model_paths(shape, boundary, model_dir="models"):
-    prefix = f"{shape.lower()}_{boundary}_f"
-    return sorted([
-        os.path.join(model_dir, fname)
-        for fname in os.listdir(model_dir)
-        if fname.startswith(prefix) and fname.endswith(".keras")
-    ])
 
 # === Model and Prediction ===
 
@@ -97,7 +89,9 @@ if predict_clicked:
         bc_key = boundary_condition
 
         model_dir = "models"
-        model_paths = get_model_paths(cutout_shape, boundary_condition)
+        model_paths = [
+            f"{shape_key}_{bc_key}_f{i}.keras" for i in range(1, 5)
+        ]
         shape_models = [load_model_safe(path) for path in model_paths]
         scaler = load_scaler_safe(cutout_shape, boundary_condition)
 
